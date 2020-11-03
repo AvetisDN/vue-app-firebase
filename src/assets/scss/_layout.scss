@@ -1,0 +1,431 @@
+header {
+  position: relative;
+  background: $dark;
+  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.5);
+  z-index: 10;
+  border-bottom: 1px solid $medium;
+
+  h3 {
+    display: inline-block;
+  }
+
+  ul {
+    float: right;
+    text-align: right;
+
+    li {
+      margin-top: 4px;
+      margin-left: 6px;
+
+      a {
+        display: block;
+        padding: 5px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 742px) {
+    h3 {
+      display: block;
+      text-align: center;
+    }
+
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+}
+
+#login {
+  background: linear-gradient(to right, $medium 0%, $medium 50%, $dark 50%, $dark 100%);
+
+  @media screen and (max-width: 742px) {
+    height: 100vh;
+    background: $dark;
+  }
+
+  .col1,
+  .col2 {
+    height: 100vh;
+    padding-top: 30vh;
+    @media screen and (max-width: 742px) {
+      height: auto;
+      padding-top: 20vh;
+    }
+  }
+
+  .col1 {
+    color: $white;
+    @media screen and (max-width: 742px) {
+      display: none;
+    }
+
+    p {
+      max-width: 490px;
+      margin-top: 2rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  .signup-form {
+    padding-top: 20vh;
+    @media screen and (max-width: 742px) {
+      padding-top: 10vh;
+    }
+  }
+
+  .col2 {
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    form {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .extras {
+      float: right;
+      text-align: right;
+
+      a {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .password-reset {
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .modal-shadow {
+    background: rgba(#000, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .modal-content {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    background: $dark;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(#000, 0.5);
+    z-index: 999;
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px;
+      cursor: pointer;
+      transition: 0.15s;
+
+      &:hover {
+        color: $medium;
+      }
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 15px 0;
+    }
+
+    .error {
+      color: $error;
+      font-size: 12px;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+#dashboard {
+  section {
+    padding: 2rem 0;
+  }
+
+  .col1 {
+    flex: 0 0 30%;
+
+    @media screen and (max-width: 1000px) {
+      flex: 0 0 40%;
+    }
+  }
+
+  .profile {
+    background: $dark;
+    padding: 2rem;
+    border: 1px solid $medium;
+
+    h5 {
+    }
+
+    p {
+      color: $medium;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .create-post {
+    p {
+      margin-bottom: 0.5rem;
+    }
+
+    textarea {
+      height: 200px;
+      margin: 0;
+      background-color: darken($dark, 3%);
+      border: 1px solid $medium;
+      border-radius: 5px;
+    }
+
+    .button {
+      margin-top: 1rem;
+      border-radius: 5px;
+      width: 100%;
+      z-index: 5;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  .hidden-posts {
+    text-align: center;
+    border: 1px solid $medium;
+    font-size: 14px;
+    border-bottom: 0;
+    background: $dark;
+
+    &:hover {
+      background: lighten($color: $dark, $amount: 20%);
+      cursor: pointer;
+    }
+
+    .new-posts {
+      color: $primary;
+    }
+
+    p {
+      padding: 15px;
+      margin: 0 auto;
+      color: darken($light, 25%);
+    }
+  }
+
+  .post {
+    border: 1px solid $medium;
+    // border-bottom: 0;
+    font-size: 14px;
+    padding: 1.5rem;
+    background: darken($dark, 2%);
+    margin-bottom: 1.25em;
+    border-radius: 5px;
+
+    &:hover {
+      background: lighten($color: $dark, $amount: 1%);
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid $medium;
+    }
+
+    h5 {
+      margin: 0 0 0.5rem;
+      font-size: 18px;
+    }
+
+    span {
+      display: block;
+      font-style: italic;
+      font-size: 12px;
+      margin-bottom: 0.5rem;
+      color: darken($light, 25%);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 1rem;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .no-results {
+    border: 1px solid $medium;
+    background: $dark;
+    text-align: center;
+    padding: 100px 1rem;
+  }
+
+  .c-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    .shadow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,.7);
+    }
+    .c-container {
+      position: relative;
+      max-width: 600px;
+      margin: 30vh auto 0;
+      padding: 2rem;
+      border-radius: 3px;
+      background: $dark;
+      box-shadow: 0 0 20px 0 rgba($dark, 0.5);
+
+      a {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        padding: 5px;
+      }
+
+      .button {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .p-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    .shadow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0,0,0,.7);
+    }
+    .p-container {
+      position: fixed;
+      max-width: 600px;
+      top: 2vh;
+      bottom: 2vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 2rem;
+      border-radius: 3px;
+      background: $dark;
+      box-shadow: 0 0 20px 0 rgba($dark, 0.5);
+      overflow: auto;
+
+      .close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        padding: 5px;
+      }
+
+      .post {
+        border: 0;
+        border-bottom: 1px solid $medium;
+        background-color: darken($dark, 5%);
+      }
+
+      .comment {
+        font-size: 14px;
+        padding: 1.5rem;
+        border-top: 1px solid $medium;
+
+        &:first-of-type {
+          border-top: 0;
+        }
+
+        h5 {
+          margin: 0 0 0.5rem;
+        }
+
+        span {
+          display: block;
+          font-style: italic;
+          font-size: 12px;
+          margin-bottom: 0.5rem;
+          color: darken($light, 20%);
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+#settings {
+  padding: 2rem 0;
+
+  .col1 {
+    max-width: 600px;
+    margin: 5vh auto 0;
+    background: $dark;
+    padding: 2rem;
+  }
+
+  form {
+    margin-top: 3rem;
+  }
+
+  .success {
+    color: $success;
+    margin: 0.5rem 0 -2rem;
+  }
+
+  .button {
+    margin-top: 2rem;
+  }
+}
